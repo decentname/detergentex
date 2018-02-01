@@ -20,6 +20,7 @@ defmodule Detergentex.Client do
     end
     method_to_call = to_char_list(method)
     detergent_params = convert_to_detergent_params(params)
+    IO.inspect detergent_params
     :detergent.call(wsdl, method_to_call, detergent_params)
   end
 
