@@ -6,13 +6,13 @@ defmodule Detergentex.Client do
     GenServer.start_link(__MODULE__, {}, [name: :detergent_client])
   end
 
-  def call_service(wsdl, method, header, message) do
-    wsdl = if not is_wsdl(wsdl) do
-      to_charlist(wsdl)
-    end
-    method_to_call = to_char_list(method)
-    :detergent.call(wsdl, method_to_call, header, message)
-  end
+  # def call_service(wsdl, method, header, message) do
+  #   wsdl = if not is_wsdl(wsdl) do
+  #     to_charlist(wsdl)
+  #   end
+  #   method_to_call = to_char_list(method)
+  #   :detergent.call(wsdl, method_to_call, header, message)
+  # end
 
   def call_service(wsdl, method, params) do
     wsdl = if not is_wsdl(wsdl) do
